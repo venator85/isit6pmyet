@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Is it 6pm yet?</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet" />
+    <style type="text/css">
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        #wrapper {
+            min-height: 100%;
+        }
+
+        .cont {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-content: center;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center
+        }
+
+        .cl_yes {
+            background-color: green;
+        }
+
+        .cl_no {
+            background-color: red;
+        }
+
+        .question {
+            color: white;
+            font-family: 'Open Sans', "Helvetica", arial, sans-serif;
+            font-weight: 600;
+            font-size: 24pt;
+        }
+
+        .answer {
+            color: white;
+            font-family: 'Open Sans', "Helvetica", arial, sans-serif;
+            font-weight: 700;
+            font-size: 72pt;
+        }
+    </style>
+    <script>
+        function myFunction() {
+            var h = new Date().getHours();
+            if (h >= 18) {
+                document.getElementById("yesno").innerHTML = "YES";
+                document.getElementById("wrapper").className = "cl_yes";
+            } else {
+                document.getElementById("yesno").innerHTML = "NO";
+                document.getElementById("wrapper").className = "cl_no";
+            }
+        }
+
+        setInterval(myFunction, 1000);
+    </script>
+</head>
+
+<body onload="myFunction()">
+    <div id="wrapper">
+        <div class="cont">
+            <p class="question">Is it 6pm yet?</p>
+            <p class="answer" id="yesno"></p>
+        </div>
+    </div>
+</body>
+
+</html>
